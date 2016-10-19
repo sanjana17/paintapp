@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="./bower_components/angular-material/angular-material.css">
+</head>
+    <body ng-app="PaintApp">
+        <md-toolbar class="md-hue-2">
+      <div class="md-toolbar-tools">
+        <h2 flex-gt-sm="85">
+          <i class="md-display-1">Paintings</i>
+        </h2>
+      </div>
+    </md-toolbar>
+    <br>
+    <div layout-align="center center" ng-controller="paintController">
+        <md-card layout-margin flex="35" >
+            <md-button class="md-no-ink" ng-if="!showFlip" ng-click="flip()"><span my-picture ></span></md-button>
+            <div ng-show="showFlip">
+                <h3 class="md-body-2"> <b> Date :</b> {{time | date}}</h3>
+                <h3 class="md-body-2"> <b> Price :</b> 340 bucks</h3>
+                <h3 class="md-body-2"> <b> Author :</b> Sanjana</h3>
+                <md-button class="md-primary" ng-click="flipOnce()">show Painting</md-button>
+            </div>
+
+        </md-card>
+    </div>
+    <script src="./bower_components/angular/angular.js"></script>
+    <script src="./bower_components/angular-aria/angular-aria.js"></script>
+    <script src="./bower_components/angular-animate/angular-animate.js"></script>
+    <script src="./bower_components/angular-material/angular-material.js"></script>
+    <script type="text/javascript" src="./src/js/app.js"></script>
+    <script type="text/javascript" src="./src/js/paint.js"></script>
+</body>
+</html>
