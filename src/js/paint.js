@@ -2,20 +2,22 @@ var module = angular.module('app.paint.controller',[]);
 
 	module.$inject = ['$scope'];
 	module.controller('paintController',function($scope){
-		
+		$scope.showFlip = [];
 		$scope.flip = function(img){
 			debugger;
 			var time = new Date();
 			$scope.time = time;
-			$scope.showFlip[img.id] = true;	
+			$scope.showFlip[img.id] = true;
 		}
 		$scope.images =[
-			{"id" : 'src/resources/1.jpg',"index": 0},
-			{"id" : 'src/resources/2.jpg',"index" : 1},
-			{"id" : 'src/resources/3.jpg',"index" :2},
-			{"id" : 'src/resources/4.jpg', "index" : 3},
+			{"id" : 'src/resources/1.jpg',"price": 100},
+			{"id" : 'src/resources/2.jpg',"price" : 110},
+			{"id" : 'src/resources/3.jpg',"price" :210},
+			{"id" : 'src/resources/4.jpg', "price" : 310},
+			{"id" : 'src/resources/5.jpg', "price" : 410},
+			{"id" : 'src/resources/6.jpg', "price" : 510}
 		]
-		$scope.flipOnce = function(){
-			$scope.showFlip = false;	
+		$scope.flipOnce = function(img){
+			$scope.showFlip[img.id] = false;	
 		}
 	});
