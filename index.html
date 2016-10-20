@@ -12,9 +12,10 @@
       </div>
     </md-toolbar>
     <br>
-    <div layout-align="center center" ng-controller="paintController">
-        <md-card layout-margin flex="35" >
-            <md-button class="md-no-ink" ng-if="!showFlip" ng-click="flip()"><span my-picture ></span></md-button>
+    <div layout-align="center center"  ng-controller="paintController" >
+        <div layout="row" layout-wrap>
+        <md-card  layout-margin flex="35" ng-repeat="img in images">
+            <md-button class="md-no-ink" ng-if="!showFlip" ng-click="flip(img)"><img src="{{img.id}}" style="width:25rem;height:25rem;"/></md-button>
             <div ng-show="showFlip">
                 <h3 class="md-body-2"> <b> Date :</b> {{time | date}}</h3>
                 <h3 class="md-body-2"> <b> Price :</b> 340 bucks</h3>
@@ -23,6 +24,7 @@
             </div>
 
         </md-card>
+    </div>
     </div>
     <script src="./bower_components/angular/angular.js"></script>
     <script src="./bower_components/angular-aria/angular-aria.js"></script>
