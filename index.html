@@ -6,6 +6,7 @@
 		background: url('./src/resources/head.png') center / cover;
 		}
 	</style>
+	<link rel="stylesheet" href="./bower_components/lightbox2/dist/css/lightbox.css">
     <link rel="stylesheet" href="./bower_components/angular-material/angular-material.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
@@ -35,7 +36,7 @@
     <div layout="column" flex-gt-sm>
         <div layout="row" layout-wrap>
         <md-card  layout-margin  flex="30" ng-repeat="img in images">
-            <md-button class="md-no-ink" ng-if="!showFlip[img.id]" ng-click="flip(img)"><img src="{{img.id}}" style="width:25rem;height:25rem;"/></md-button>
+            <a data-lightbox="paintings" href="{{img.id}}" data-width="640" data-title="PRICE:{{img.price}}, DESCRIPTION:Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor"><img src="{{img.id}}" style="width:25rem;height:25rem;"></a>
             <div ng-show="showFlip[img.id]">
                 <h3 class="md-body-2" flex> <b> Date :</b> {{time | date}}</h3>
                 <h3 class="md-body-2" flex> <b> Price :</b> {{img.price}}</h3>
@@ -49,11 +50,18 @@
     	</div>
     </div>
     <script src="./bower_components/angular/angular.js"></script>
+    <script src="./bower_components/lightbox2/dist/js/lightbox-plus-jquery.min.js"></script>
     <script src="./bower_components/angular-aria/angular-aria.js"></script>
     <script src="./bower_components/angular-animate/angular-animate.js"></script>
     <script src="./bower_components/angular-material/angular-material.js"></script>
     <script src="./bower_components/angular-route/angular-route.js"></script>
     <script type="text/javascript" src="./src/js/app.js"></script>
     <script type="text/javascript" src="./src/js/paint.js"></script>
+    <script>
+    lightbox.option({
+      'resizeDuration': 200,
+      'wrapAround': true
+    })
+</script>
 </body>
 </html>
